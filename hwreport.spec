@@ -5,12 +5,12 @@
 Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbiera informacje dla strony hardware4linux
 Name:		hwreport
-Version:	0.9
+Version:	0.9.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
-# Source0-md5:	47612077f8a00ddb8c9e6c1480c63f63
+# Source0-md5:	ac00d98f6cd3344cb518b7758ee690ac
 URL:		http://hardware4linux.info/
 Requires:	dmidecode
 Requires:	issue
