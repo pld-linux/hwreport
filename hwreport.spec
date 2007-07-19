@@ -3,7 +3,7 @@
 # - checkup, bump to 1.0 and build
 #
 Summary:	Collect system informations for the hardware4linux site
-Summary(pl.UTF-8):	Zbiera informacje dla strony hardware4linux
+Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
 Version:	0.9.1
 Release:	1
@@ -28,12 +28,12 @@ the hardware4linux site.
 
 %description -l pl.UTF-8
 Hwreport używa skryptu hwreport i scan-printers do rozpoznawania
-sprzętu w Twoim PC-ie i porównywanie go ze listą kompatybilności na
+sprzętu w komputerze i porównywania go ze listą kompatybilności na
 stronie http://hardware4linux.info.
 
-To działa w obie strony -- możesz pobierać informację na temat
-sterowników i kompatybilności Twojego sprzętu ze strony lub wysyłać
-nowe wpisy do strony hardware4linux.
+Działa to w obie strony -- można pobierać informacje na temat
+sterowników i kompatybilności sprzętu ze strony lub wysyłać
+nowe wpisy na stronę hardware4linux.
 
 %prep
 %setup -q
