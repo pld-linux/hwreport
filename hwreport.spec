@@ -6,7 +6,7 @@ Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbiera informacje dla strony hardware4linux
 Name:		hwreport
 Version:	0.9
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
@@ -44,7 +44,7 @@ BINARIES = osinfo hwreport
 sbindir = %{_sbindir}
 all: Makefile $(TARGET)
 $(TARGET):  $(OBJECTS)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
+	$(CC) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
@@ -59,7 +59,6 @@ EOF
 %build
 %{__make} \
 	CC="%{__cc}"
-	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
