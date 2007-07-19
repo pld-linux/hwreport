@@ -28,7 +28,7 @@ the hardware4linux site.
 
 %description -l pl.UTF-8
 Hwreport używa skryptu hwreport i scan-printers do rozpoznawania
-sprzętu w komputerze i porównywania go ze listą kompatybilności na
+sprzętu w komputerze i porównywania go z listą kompatybilności na
 stronie http://hardware4linux.info.
 
 Działa to w obie strony -- można pobierać informacje na temat
