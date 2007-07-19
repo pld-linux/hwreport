@@ -13,6 +13,7 @@ Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
 # Source0-md5:	47612077f8a00ddb8c9e6c1480c63f63
 URL:		http://hardware4linux.info/
 Requires:	dmidecode
+Requires:	issue
 Requires:	pciutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
