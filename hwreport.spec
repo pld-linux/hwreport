@@ -20,18 +20,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Hwreport uses a script hwreport and scan-printers to find out the
 hardware in your PC and confront it with a compatibility list on
-http://hardware4linux.info.
+<http://hardware4linux.info/>.
 
-It works both ways -- you can get information about the drivers and
+It works both ways - you can get information about the drivers and
 compatibility of your hardware from the site and submit new entries to
 the hardware4linux site.
 
 %description -l pl.UTF-8
-Hwreport używa skryptu hwreport i scan-printers do rozpoznawania
-sprzętu w komputerze i porównywania go z listą kompatybilności na
-stronie http://hardware4linux.info.
+Hwreport używa skryptu hwreport i programu scan-printers do
+rozpoznawania sprzętu w komputerze i porównywania go z listą
+kompatybilności na stronie <http://hardware4linux.info/>.
 
-Działa to w obie strony -- można pobierać informacje na temat
+Działa to w obie strony - można pobierać informacje na temat
 sterowników i kompatybilności sprzętu ze strony lub wysyłać
 nowe wpisy na stronę hardware4linux.
 
