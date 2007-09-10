@@ -5,12 +5,12 @@
 Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
-Version:	0.9.2
+Version:	0.9.4
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
-# Source0-md5:	5c7fd2ff64c44bb9e3be32c6b296092e
+# Source0-md5:	c71ad5bdf412763d0e0a855539c6f0d2
 URL:		http://hardware4linux.info/
 Requires:	dmidecode
 Requires:	issue
@@ -41,7 +41,7 @@ cat > Makefile <<'EOF'
 TARGET = scan-printers
 INSTALL = %{_bindir}/install -c
 OBJECTS = scan-printers.o
-BINARIES = osinfo hwreport
+BINARIES = hwreport
 sbindir = %{_sbindir}
 all: Makefile $(TARGET)
 $(TARGET):  $(OBJECTS)
