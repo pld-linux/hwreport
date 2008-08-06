@@ -1,16 +1,12 @@
-#
-# TODO:
-# - checkup, bump to 1.0 and build
-#
 Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
-Version:	0.9.4
+Version:	0.10.0
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
-# Source0-md5:	c71ad5bdf412763d0e0a855539c6f0d2
+# Source0-md5:	f9a00ee633ee6e4a0d286f9482d7629d
 URL:		http://hardware4linux.info/
 Requires:	dmidecode
 Requires:	issue
