@@ -1,13 +1,15 @@
 Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
-Version:	0.10.0
+Version:	0.11.0
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
-# Source0-md5:	f9a00ee633ee6e4a0d286f9482d7629d
+# Source0-md5:	463109a35076dfe946ab115cd5422e6d
 URL:		http://hardware4linux.info/
+BuildRequires:	libusb
+BuildRequires:	pkgconfig
 Requires:	dmidecode
 Requires:	issue
 Requires:	pciutils
@@ -28,25 +30,25 @@ rozpoznawania sprzętu w komputerze i porównywania go z listą
 kompatybilności na stronie <http://hardware4linux.info/>.
 
 Działa to w obie strony - można pobierać informacje na temat
-sterowników i kompatybilności sprzętu ze strony lub wysyłać
-nowe wpisy na stronę hardware4linux.
+sterowników i kompatybilności sprzętu ze strony lub wysyłać nowe wpisy
+na stronę hardware4linux.
 
 %prep
 %setup -q
 cat > Makefile <<'EOF'
-TARGET = scan-printers
+TARGET = scan-printers reportusb
 INSTALL = %{_bindir}/install -c
-OBJECTS = scan-printers.o
-BINARIES = hwreport
+BINARIES = hwreport osinfo
 sbindir = %{_sbindir}
 all: Makefile $(TARGET)
-$(TARGET):  $(OBJECTS)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJECTS)
+scan-printers: scan-printers.c
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+
+reportusb: reportusb.c
+	$(CC) $(CFLAGS) `pkg-config --cflags libusb-1.0` $(LDFLAGS) `pkg-config --libs libusb-1.0` -o $@ $^
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
-
-scan-printers.o: scan-printers.c
 
 install:
 	$(INSTALL) $(TARGET) $(DESTDIR)/$(sbindir)
