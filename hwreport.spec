@@ -2,13 +2,13 @@ Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
 Version:	0.11.0
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
 # Source0-md5:	463109a35076dfe946ab115cd5422e6d
 URL:		http://hardware4linux.info/
-BuildRequires:	libusb
+BuildRequires:	libusb-devel
 BuildRequires:	pkgconfig
 Requires:	dmidecode
 Requires:	pld-release
@@ -42,10 +42,10 @@ BINARIES = hwreport osinfo
 sbindir = %{_sbindir}
 all: Makefile $(TARGET)
 scan-printers: scan-printers.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) `pkg-config --cflags libusb-1.0` -o $@ $^ $(LDFLAGS) `pkg-config --libs libusb-1.0`
 
 reportusb: reportusb.c
-	$(CC) $(CFLAGS) `pkg-config --cflags libusb-1.0` $(LDFLAGS) `pkg-config --libs libusb-1.0` -o $@ $^
+	$(CC) $(CFLAGS) `pkg-config --cflags libusb-1.0` -o $@ $^ $(LDFLAGS) `pkg-config --libs libusb-1.0`
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
