@@ -2,7 +2,7 @@ Summary:	Collect system informations for the hardware4linux site
 Summary(pl.UTF-8):	Zbieranie informacji dla strony hardware4linux
 Name:		hwreport
 Version:	0.11.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://hardware4linux.info/res/%{name}-%{version}.tar.bz2
@@ -11,7 +11,7 @@ URL:		http://hardware4linux.info/
 BuildRequires:	libusb
 BuildRequires:	pkgconfig
 Requires:	dmidecode
-Requires:	issue
+Requires:	pld-release
 Requires:	pciutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
